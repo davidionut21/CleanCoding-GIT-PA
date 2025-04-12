@@ -12,19 +12,19 @@ typedef struct Graph {
     NODE **adjacency_lists;
 } GPH;
 
-// utils
+// UTILS
 NODE *create_node(int v) {
-    NODE *new_node = malloc(sizeof(NODE));
+    NODE *new_node = (NODE*)malloc(sizeof(NODE));
     new_node->data = v;
     new_node->next = NULL;
     return new_node;
 }
 
 GPH *create_graph(int vertices) {
-    GPH *graph = malloc(sizeof(GPH));
+    GPH *graph = (GPH*)malloc(sizeof(GPH));
     graph->vertices = vertices;
-    graph->adjacency_lists = malloc(vertices * sizeof(NODE *));
-    graph->visited = calloc(vertices, sizeof(int));
+    graph->adjacency_lists = (NODE**)malloc(vertices * sizeof(NODE *));
+    graph->visited = (int*)malloc(vertices * sizeof(int));
 
     for (int i = 0; i < vertices; i++) {
         graph->adjacency_lists[i] = NULL;
