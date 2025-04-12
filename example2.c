@@ -12,7 +12,7 @@ typedef struct Graph {
     NODE **adjacency_lists;
 } GPH;
 
-// utils
+// UTILS
 NODE *create_node(int v) {
     NODE *new_node = malloc(sizeof(NODE));
     new_node->data = v;
